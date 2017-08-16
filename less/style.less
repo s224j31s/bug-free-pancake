@@ -1,0 +1,83 @@
+@main-color:#f64221;
+@header-bg:lighten(@main-color,15%);
+@main-font-family: arial, helvetica, sans-serif;
+@header-color:#fff;
+
+//@footer-bg:#ff2121;#38c6e2;
+.reset(){
+    margin:0;
+    padding:0;
+}
+
+.fullheight(){
+    height:100vh;
+}
+
+html,body{
+    .fullheight;
+}
+
+.appview{
+    .fullheight;
+    display:flex;
+    flex-direction:column;
+    
+}
+body{
+    .reset;
+    font-family:@main-font-family;
+}
+header{
+    background-color:@header-bg;
+    color:@header-color;
+    height:50px;
+    h1{
+        color:@header-color;
+        .reset;
+        text-align:center;
+    }
+}
+
+.container{
+    flex:1 0 auto;
+}
+
+footer{
+    background-color:@header-bg;
+    height:50px;
+    bottom:0;
+    left:0;
+}
+
+#task-form{
+    display:flex;
+    flex-direction:row;
+    #task-input{
+        flex:1 0 auto;
+        padding:10px;
+    }
+    .add-button{
+        width:50px;
+        background-color:darken(@main-color,15%);
+        color:@header-color;
+        border:1px solid transparent;
+        
+    }
+}
+
+#task-list{
+    list-style: none;
+    .reset;
+    li{
+        font-size:22px;
+        font-weight:200;
+        color:darken(@main-color,25%);
+        padding:15px 10px;
+        border-bottom:1px solid lighten(@main-color,55%);
+    }
+    li[data-status='1']{
+        text-decoration:line-through;
+        text-decoration-color:darken(@main-color,30%);
+    
+    }
+}
