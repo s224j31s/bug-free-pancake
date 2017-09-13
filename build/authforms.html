@@ -1,0 +1,36 @@
+<template id="signup-template">
+  <div class="overlay" id="signup-box">
+    <form class="authform" id="signup-form">
+      <h2>Sign up for an account</h2>
+      <label>Username</label>
+      <input type="text" name="username" id="username" placeholder="jane88" />
+      <label>Email</label>
+      <input type="email" name="email" id="email" placeholder="jane88@domain.com" />
+      <label>Password</label>
+      <input type="password" name="password" id="password" placeholder="minimum 6 chars" />
+      <div class="button-container">
+        <button class="auth-button" type="submit">Sign Up</button>
+      </div>
+      <p>already have an account?
+        <a href="#" id="signin-link">sign in</a>
+      </p>
+    </form>
+  </div>
+</template>
+<template id="signin-template">
+  <div class="overlay" id="signin-box">
+    <form class="authform" id="signin-form">
+      <h2>Sign in to your account</h2>
+      <label>Email</label>
+      <input type="email" name="email" id="email" placeholder="jane88@domain.com" />
+      <label>Password</label>
+      <input type="password" name="password" id="password" placeholder="minimum 6 chars" />
+      <div class="button-container">
+        <button class="auth-button" type="submit">Sign In</button>
+      </div>
+      <p>don't have an account?
+        <a href="#" id="signup-link">sign up</a>
+      </p>
+    </form>
+  </div>
+</template>

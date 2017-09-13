@@ -4,17 +4,23 @@ html
     meta(name='viewport' content='width=device-width,initial-scale=1.0,user-scalable=no')
     title To Do List
     link(rel='stylesheet' href='style.css')
+    include firebase.pug
     
   body
     .appview
       header
+        h2#username
         h1 To Do List
+        button#remove &times;
+        a(href='#' id='logout') Log Out
       main.container
         ul#task-list
-          li(data-status='0') Buy milk
-          li(data-status='1') Get newspaper 
+          // li(data-status='0') Buy milk
+          // li(data-status='1') Get newspaper 
       footer
         form#task-form
           input(type='text' placeholder='add task' id= 'task-input')
           button(type='submit' class='add-button') Add
       script(src='main.js')
+      // include templates
+      include authforms.pug

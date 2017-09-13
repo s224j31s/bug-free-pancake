@@ -4,16 +4,31 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
     <title>To Do List</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://www.gstatic.com/firebasejs/4.3.0/firebase.js"></script>
+    <script>
+      var config = {
+        apiKey: "AIzaSyA7cmGWJdIFAzl8JmvZoWP6EQUpfofRbbk",
+        authDomain: "telos-7e9cb.firebaseapp.com",
+        databaseURL: "https://telos-7e9cb.firebaseio.com",
+        projectId: "telos-7e9cb",
+        storageBucket: "telos-7e9cb.appspot.com",
+        messagingSenderId: "755283311035"
+      };
+      firebase.initializeApp(config);
+    </script>
   </head>
   <body>
     <div class="appview">
       <header>
+        <h2 id="username"></h2>
         <h1>To Do List</h1>
+        <button id="remove">&times;</button>
+        <a href="#" id="logout">Log Out</a>
       </header>
       <main class="container">
         <ul id="task-list">
-          <li data-status="0">Buy milk</li>
-          <li data-status="1">Get newspaper </li>
+          <!-- li(data-status='0') Buy milk-->
+          <!-- li(data-status='1') Get newspaper -->
         </ul>
       </main>
       <footer>
@@ -23,6 +38,43 @@
         </form>
       </footer>
       <script src="main.js"></script>
+      <!-- include templates-->
+      <template id="signup-template">
+        <div class="overlay" id="signup-box">
+          <form class="authform" id="signup-form">
+            <h2>Sign up for an account</h2>
+            <label>Username</label>
+            <input type="text" name="username" id="username" placeholder="jane88">
+            <label>Email</label>
+            <input type="email" name="email" id="email" placeholder="jane88@domain.com">
+            <label>Password</label>
+            <input type="password" name="password" id="password" placeholder="minimum 6 chars">
+            <div class="button-container">
+              <button class="auth-button" type="submit">Sign Up</button>
+            </div>
+            <p>already have an account?
+              <a href="#" id="signin-link">sign in</a>
+            </p>
+          </form>
+        </div>
+      </template>
+      <template id="signin-template">
+        <div class="overlay" id="signin-box">
+          <form class="authform" id="signin-form">
+            <h2>Sign in to your account</h2>
+            <label>Email</label>
+            <input type="email" name="email" id="email" placeholder="jane88@domain.com">
+            <label>Password</label>
+            <input type="password" name="password" id="password" placeholder="minimum 6 chars">
+            <div class="button-container">
+              <button class="auth-button" type="submit">Sign In</button>
+            </div>
+            <p>don't have an account?
+              <a href="#" id="signup-link">sign up</a>
+            </p>
+          </form>
+        </div>
+      </template>
     </div>
   </body>
 </html>

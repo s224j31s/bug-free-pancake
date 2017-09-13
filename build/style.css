@@ -2,35 +2,95 @@ html,
 body {
   height: 100vh;
 }
-.appview {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
 body {
   margin: 0;
   padding: 0;
   font-family: arial, helvetica, sans-serif;
 }
+.appview {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.overlay {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.overlay .authform {
+  background-color: white;
+  max-width: 50%;
+  padding: 12px;
+  border: 1px solid #cccccc;
+  border-radius: 10px;
+}
+.overlay label {
+  display: block;
+  font-weight: bold;
+  margin: 10px 0;
+}
+.overlay input {
+  display: block;
+  width: 100%;
+  padding: 5px;
+  box-sizing: border-box;
+  font-size: 1.2em;
+  border: 1px solid #bbbbbb;
+}
+.overlay .button-container {
+  margin-top: 15px;
+  text-align: center;
+}
+.overlay .button-container .auth-button {
+  color: white;
+  background-color: black;
+  border: 1px solid black;
+  border-radius: 4px;
+  padding: 10px;
+}
 header {
-  background-color: #f9816b;
-  color: #fff;
   height: 50px;
+  background-color: #8ab4f8;
+  color: #ffffff;
+  display: flex;
+  justify-content: space-between;
 }
 header h1 {
-  color: #fff;
   margin: 0;
   padding: 0;
   text-align: center;
 }
+header #remove {
+  border: 1px solid transparent;
+  background: transparent;
+  max-width: 60px;
+  opacity: 0;
+}
+header #remove img {
+  max-width: 100%;
+}
+header #remove.show {
+  opacity: 1;
+}
+header #logout {
+  color: white;
+  text-decoration: none;
+  padding: 15px 5px;
+}
 .container {
   flex: 1 0 auto;
+  overflow-y: auto;
+  max-height: calc(100vh - 100px);
 }
 footer {
-  background-color: #f9816b;
   height: 50px;
-  bottom: 0;
-  left: 0;
+  background-color: #8ab4f8;
 }
 #task-form {
   display: flex;
@@ -42,8 +102,8 @@ footer {
 }
 #task-form .add-button {
   width: 50px;
-  background-color: #c32508;
-  color: #fff;
+  background-color: #0d5cdd;
+  color: #ffffff;
   border: 1px solid transparent;
 }
 #task-list {
@@ -54,11 +114,12 @@ footer {
 #task-list li {
   font-size: 22px;
   font-weight: 200;
-  color: #921c06;
+  color: #0a48ac;
   padding: 15px 10px;
   border-bottom: 1px solid #ffffff;
 }
 #task-list li[data-status='1'] {
   text-decoration: line-through;
-  text-decoration-color: #791705;
+  text-decoration-color: #093e94;
+  color: #0a48ac;
 }

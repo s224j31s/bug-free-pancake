@@ -1,0 +1,31 @@
+template(id='signup-template')
+  .overlay#signup-box
+    form.authform(id='signup-form')
+      h2 Sign up for an account
+      label Username
+      input(type='text' name='username' id='username' placeholder='jane88')
+      label Email
+      input(type='email' name='email' id='email' placeholder='jane88@domain.com')
+      label Password
+      input(type='password' name='password' id='password' placeholder='minimum 6 chars')
+      .button-container
+        button(type='submit' class='auth-button') Sign Up
+      p already have an account?
+        a(href='#',id='signin-link') sign in
+        
+template(id='signin-template')
+  .overlay#signin-box
+    form.authform(id='signin-form')
+      h2 Sign in to your account
+      label Email
+      input(type='email' name='email' id='email' placeholder='jane88@domain.com')
+      label Password
+      input(type='password' name='password' id='password' placeholder='minimum 6 chars')
+      .button-container
+        button(type='submit' class='auth-button') Sign In
+      p don't have an account?
+        a(href='#',id='signup-link') sign up
+      
+    
+    
+    
